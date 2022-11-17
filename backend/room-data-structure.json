@@ -1,0 +1,102 @@
+[
+    {
+      "id": "room-0a",
+      "title": "Room title",
+      "type": {
+        "type": "CATTE",
+        "title": "Sắc tê"
+      },
+      "currency": {
+        "type": "K",
+        "title": "K"
+      },
+      "cost": 5,
+      "player_max": 6,
+      "player_min": 2,
+      "player_count": 6,
+      "players": [
+        {
+          "id": "player-0a",
+          "amount_of_money": 100,
+          "card_count": 6,
+          "is_owner": true,
+          "available_final_cycle": false,
+          "slot": 1,
+          "cards": [
+            {
+              "title": "Ách",
+              "level": 13,
+              "type": "HEART",
+              "image": "Ace_of_hearts.svg",
+              "flip": "UP"
+            },
+            {
+              "title": "Bồi",
+              "level": 10,
+              "type": "CLUB",
+              "image": "Jack_of_clubs.svg",
+              "flip": "DOWN"
+            },
+            {
+              "title": "Heo",
+              "level": 1,
+              "type": "SPADE",
+              "image": "2_of_spades.svg",
+              "flip": "NULL"
+            },
+            {
+              "title": "Ba",
+              "level": 2,
+              "type": "HEART",
+              "image": "3_of_hearts.svg",
+              "flip": "NULL"
+            },
+            {
+              "title": "Già",
+              "level": 12,
+              "type": "CLUB",
+              "image": "King_of_clubs.svg",
+              "flip": "NULL"
+            },
+            {
+              "title": "Chín",
+              "level": 8,
+              "type": "DIAMOND",
+              "image": "9_of_diamonds.svg",
+              "flip": "NULL"
+            }
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "cycle_current": 2,
+          "cycle_total": 6,
+          "cycle_max": 4,
+          "player_start": "player-0a",
+          "player_win": "player-0a",
+          "slot_current": 2,
+          "slot_total": 6,
+          "card_current": {
+            "id_player": "player-0a",
+            "title": "Bồi",
+            "level": 10,
+            "type": "CLUB",
+            "image": "Jack_of_clubs.svg",
+            "flip": "UP"
+          },
+          "card_prev": {
+            "id_player": "player-0a",
+            "title": "Ách",
+            "level": 13,
+            "type": "HEART",
+            "image": "Ace_of_hearts.svg",
+            "flip": "DOWN"
+          },
+          "time_out_default": 20,
+          "time_out_current": 19
+        }
+      ],
+      "status": "PENDING"
+    }
+]
