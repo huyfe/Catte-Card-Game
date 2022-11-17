@@ -86,7 +86,7 @@ io.on('connection', socket => {
 
 app.set('socketio', io); // Set to use io object in every express route
 
-// Middleware
+// General middlewares
 app.use(express.json());
 app.use(cors());
 
