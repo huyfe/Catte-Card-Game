@@ -4,14 +4,12 @@ const cors = require('cors');
 const http = require('http');
 const socketIO = require("socket.io");
 
-
 // Mongoose
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
-// Import Routes
+// Import the routes
 const authRoute = require('./routes/auth');
-const postRoute = require('./routes/categories');
 const userRoute = require('./routes/user');
 const roomRoute = require('./routes/room');
 
@@ -25,11 +23,11 @@ const { userOnline, userOffline, getCurrentUser, getUsersInRooms, getAllUsersOnl
 // Config env 
 dotenv.config();
 
-// Connect to database mongodb
-mongoose.connect(process.env.DB_CONNECT, () => console.log('connected to db'));
+// Connecting to database mongodb
+mongoose.connect(process.env.DB_CONNECT, () => console.log('Connected to database'));
 
 
-// Socket io set up
+// Setting up the SOCKET IO
 const server = http.createServer(app);
 const io = socketIO(server, {
     transports: ["polling", "websocket"],
@@ -37,7 +35,6 @@ const io = socketIO(server, {
         origin: "*",
     },
     maxHttpBufferSize: 1e8, pingTimeout: 60000
-
 })
 
 io.on('connection', socket => {
@@ -89,18 +86,15 @@ io.on('connection', socket => {
 
 app.set('socketio', io); // Set to use io object in every express route
 
-
-
 // Middleware
 app.use(express.json());
 app.use(cors());
 
 // Route Middlewares
 app.use('/api/auth', authRoute);
-app.use('/api/posts', postRoute);
 app.use('/api/users', userRoute);
 app.use('/api/rooms', roomRoute);
 
 const port = process.env.PORT;
 
-server.listen(port, () => console.log("Server Up and running "))
+server.listen(port, () => console.log("Server up and running "))
