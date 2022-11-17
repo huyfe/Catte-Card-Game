@@ -1,7 +1,7 @@
 const router = require('express').Router(); // import router to generate routes
 const Room = require('../model/Room'); // import model Room
 const User = require('../model/User'); // import model Room
-const verify = require('./verifyToken'); // import middleware verify auth
+const verify = require('../middlewares/verifyToken'); // import middleware verify auth
 const moment = require('moment');
 /*
 * GET ALL MY ROOM

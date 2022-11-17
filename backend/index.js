@@ -34,18 +34,18 @@ const onConnection = (socket) => {
     registerUserHandlers(io, socket);
 }
 
-// Initializing socket connection
+// Event handler io connection
 io.on("connection", onConnection);
 
 // General middlewares
 app.use(express.json());
 app.use(cors());
 
-// Route Middlewares
+// Route middlewares
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/rooms', roomRoute);
 
 const port = process.env.PORT;
 
-server.listen(port, () => console.log("Server up and running "))
+server.listen(port, () => console.log("Server up and running "));

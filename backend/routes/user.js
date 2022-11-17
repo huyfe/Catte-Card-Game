@@ -1,6 +1,6 @@
 const router = require('express').Router(); // import router to generate routes
 const User = require('../model/User'); // import model User
-const verify = require('./verifyToken'); // import middleware verify auth
+const verify = require('../middlewares/verifyToken'); // import middleware verify auth
 
 // GET ALL USERS 
 router.get('/all', verify, async (req, res) => {
