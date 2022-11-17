@@ -1,12 +1,12 @@
 {
-  "name": "bearer",
+  "name": "catte card game frontend",
   "version": "1.0.0",
   "description": "Startup project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "gwyn, travis",
+  "author": "gwyn, travis, james",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2",
