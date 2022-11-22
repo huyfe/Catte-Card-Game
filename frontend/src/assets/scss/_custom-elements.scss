@@ -1,0 +1,15 @@
+/* Start style room items */
+.room-items {
+}
+/* End style room item */
+
+/* Start style room item */
+.room-item {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        color: $color-second;
+    }
+}
+/* End style room item */

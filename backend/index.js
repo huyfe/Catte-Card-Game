@@ -31,6 +31,7 @@ const io = socketIO(server, {
 })
 
 const onConnection = (socket) => {
+    console.log("A user has connected...");
     registerUserHandlers(io, socket);
 }
 
@@ -48,4 +49,4 @@ app.use('/api/rooms', roomRoute);
 
 const port = process.env.PORT;
 
-server.listen(port, () => console.log("Server up and running "));
+server.listen(port, () => console.log("Server up and running on port " + port));

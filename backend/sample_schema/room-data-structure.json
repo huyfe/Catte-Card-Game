@@ -7,10 +7,10 @@
         "title": "Sắc tê"
       },
       "currency": {
-        "type": "K",
-        "title": "K"
+        "type": "VND",
+        "title": "VNĐ"
       },
-      "cost": 5,
+      "cost": 5000,
       "player_max": 6,
       "player_min": 2,
       "player_count": 6,
