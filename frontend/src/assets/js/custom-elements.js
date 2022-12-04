@@ -55,7 +55,7 @@ class RoomItem extends HTMLElement {
     }
     createDivWrapper() {
         const divWrapper = document.createElement("div");
-        divWrapper.classList.add("room-item__wrapper", "bg-primary", "color-second", "p-3", "rounded-3", "shadow");
+        divWrapper.classList.add("room-item__wrapper", "bg-primary", "color-second", "p-4", "rounded-3", "shadow");
         return divWrapper;
     }
 
@@ -78,16 +78,30 @@ class RoomItem extends HTMLElement {
     }
 
     createButtonPlay() {
-        const buttonPlay = document.createElement("button");
-        buttonPlay.className = "room-item__btn-play btn btn-light mt-3 w-100";
+        const buttonPlay = document.createElement("a");
+        buttonPlay.href = `/frontend/src/pages/room.html?id=${this.id}`;
+        buttonPlay.className = "room-item__btn-play btn btn-primary mt-3 w-100";
         const buttonPlayContent = document.createTextNode("Chơi ngay");
 
         buttonPlay.appendChild(buttonPlayContent);
-        buttonPlay.addEventListener("click", function () {
-            console.log("Chơi ngay");
-        })
+        buttonPlay.addEventListener("click", this._eventOnPlay)
         return buttonPlay;
+    }
+
+    _eventOnPlay() {
+        console.log("Chơi ngay");
     }
 }
 
 customElements.define("room-item", RoomItem);
+
+class RoomDetail extends HTMLElement {
+    constructor() {
+        super();
+        this.className = "room-item col-lg-3 col-md-4 col-6 mb-4";
+        var urlParams = new URLSearchParams(window.location.search);
+        this.id = urlParams.get("id")
+        this.init();
+    }
+}
+customElements.define("room-detail", RoomDetail);
