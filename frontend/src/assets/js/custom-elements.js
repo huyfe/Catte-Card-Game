@@ -71,7 +71,7 @@ class RoomItem extends HTMLElement {
     createTextBets() {
         const textBets = document.createElement("p");
         textBets.className = "room-item__bets";
-        const textBetsContent = document.createTextNode("Tiền cược: " + this.bets);
+        const textBetsContent = document.createTextNode("Tiền cược: " + money(this.bets));
 
         textBets.appendChild(textBetsContent);
         return textBets;
@@ -98,10 +98,47 @@ customElements.define("room-item", RoomItem);
 class RoomDetail extends HTMLElement {
     constructor() {
         super();
-        this.className = "room-item col-lg-3 col-md-4 col-6 mb-4";
+        this.className = "room-detail";
         var urlParams = new URLSearchParams(window.location.search);
-        this.id = urlParams.get("id")
+        this.id = urlParams.get("id");
+        this.title = "Room title";
+        this.bets = 5000;
         this.init();
+    }
+
+    init() {
+        const roomHeader = this.createRoomHeader();
+        this.prepend(roomHeader);
+    }
+
+    createRoomHeader() {
+        const roomHeader = document.createElement("div");
+        roomHeader.className = "room-detail__header d-flex gap-5 mb-3 color-second";
+
+        const textId = document.createElement("p");
+        const textIdContent = document.createTextNode("Mã phòng: " + this.id);
+        textId.appendChild(textIdContent);
+
+        const textTitle = document.createElement("p");
+        const textTitleContent = document.createTextNode(this.title);
+        textTitle.appendChild(textTitleContent);
+
+        const textBets = document.createElement("p");
+        const textBetsContent = document.createTextNode("Tiền cược: " + money(this.bets));
+        textBets.appendChild(textBetsContent);
+
+        roomHeader.append(textId, textTitle, textBets);
+
+        return roomHeader;
     }
 }
 customElements.define("room-detail", RoomDetail);
+
+class CasinoTable extends HTMLElement {
+    constructor() {
+        super();
+        this.className = "casino-table";
+        // this.init();
+    }
+}
+customElements.define("casino-table", CasinoTable);

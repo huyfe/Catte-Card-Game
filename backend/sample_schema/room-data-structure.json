@@ -7,10 +7,10 @@
         "title": "Sắc tê"
       },
       "currency": {
-        "type": "VND",
-        "title": "VNĐ"
+        "type": "K",
+        "title": "K"
       },
-      "cost": 5000,
+      "bets": 5000,
       "player_max": 6,
       "player_min": 2,
       "player_count": 6,
